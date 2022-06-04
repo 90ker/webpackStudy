@@ -3,7 +3,8 @@ module.exports = {
   entry: './src/main',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/main.js'
+    filename: 'js/main.js',
+    clean: true
   },
   module: {
     rules: [
@@ -48,6 +49,13 @@ module.exports = {
         },
         generator: {
           filename: 'images/[hash:5][ext][query]'
+        }
+      },
+      {
+        test: /\.(ttf|woff2?)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'icons/[hash:5][ext][query]'
         }
       }
     ]

@@ -5,6 +5,7 @@ import './css/index.less'
 import './css/index.scss'
 import './css/index.sass'
 import './css/index.styl'
+import './css/iconfont.css'
 
 
 console.log(count(1, 3));
