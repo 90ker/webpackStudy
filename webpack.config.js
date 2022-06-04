@@ -2,6 +2,7 @@ const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const basicStyleLoader = [
   MiniCssExtractPlugin.loader,
@@ -82,7 +83,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/main.css'
-    })
+    }),
+    new CssMinimizerPlugin()
   ],
   devServer: {
     host: 'localhost',
