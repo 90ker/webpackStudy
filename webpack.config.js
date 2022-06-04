@@ -78,5 +78,10 @@ module.exports = {
       template: path.resolve(__dirname, './public/index.html')
     })
   ],
+  devServer: {
+    host: 'localhost',
+    port: '3000',
+    open: true
+  },
   mode: 'development' 
 }
