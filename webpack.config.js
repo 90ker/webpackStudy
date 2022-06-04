@@ -59,6 +59,13 @@ module.exports = {
         generator: {
           filename: 'icons/[hash:5][ext][query]'
         }
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
       }
     ]
   },
