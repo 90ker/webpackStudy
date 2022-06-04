@@ -32,6 +32,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
+    chunkFilename: 'js/[name].js',
     clean: true
   },
   module: {
@@ -117,7 +118,18 @@ module.exports = {
       new TerserWebpackPlugin({
         parallel: threads
       })
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        default: {
+          minSize: 0,
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
   },
   devServer: {
     host: 'localhost',

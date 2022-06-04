@@ -1,0 +1,1 @@
+{"version":3,"file":"js/sum.js","mappings":";;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;;AACA;AAAA;AAAA;AACA","sources":["webpack://webpackStudy/./src/js/sum.js"],"sourcesContent":["export default function sum (...args) {\n  return args.reduce((a, b) => a + b, 0);\n}"],"names":[],"sourceRoot":""}

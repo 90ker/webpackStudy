@@ -1,5 +1,5 @@
 import count from './js/count';
-import sum from './js/sum';
+// import sum from './js/sum';
 import './css/index.css'
 import './css/index.less'
 import './css/index.scss'
@@ -9,4 +9,4 @@ import './css/iconfont.css'
 
 
 console.log(count(2, 9));
-console.log(sum(2, 7));
+// console.log(sum(2, 7));

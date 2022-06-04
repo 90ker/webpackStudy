@@ -9,6 +9,7 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    'no-var': 2
-  }
+    'no-var': 2,
+  },
+  plugins: ['import']
 }

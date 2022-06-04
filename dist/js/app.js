@@ -2,113 +2,29 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/css/iconfont.css":
-/*!******************************!*\
-  !*** ./src/css/iconfont.css ***!
-  \******************************/
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
+/* harmony import */ var _js_count__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/count */ "./src/js/count.js");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
+/* harmony import */ var _css_index_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/index.less */ "./src/css/index.less");
+/* harmony import */ var _css_index_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/index.scss */ "./src/css/index.scss");
+/* harmony import */ var _css_index_sass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./css/index.sass */ "./src/css/index.sass");
+/* harmony import */ var _css_index_styl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/index.styl */ "./src/css/index.styl");
+/* harmony import */ var _css_iconfont_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/iconfont.css */ "./src/css/iconfont.css");
+ // import sum from './js/sum';
 
 
-/***/ }),
-
-/***/ "./src/css/index.css":
-/*!***************************!*\
-  !*** ./src/css/index.css ***!
-  \***************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
 
 
-/***/ }),
-
-/***/ "./src/css/index.less":
-/*!****************************!*\
-  !*** ./src/css/index.less ***!
-  \****************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
 
 
-/***/ }),
 
-/***/ "./src/css/index.sass":
-/*!****************************!*\
-  !*** ./src/css/index.sass ***!
-  \****************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/css/index.scss":
-/*!****************************!*\
-  !*** ./src/css/index.scss ***!
-  \****************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/css/index.styl":
-/*!****************************!*\
-  !*** ./src/css/index.styl ***!
-  \****************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/js/count.js":
-/*!*************************!*\
-  !*** ./src/js/count.js ***!
-  \*************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
-/* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(a, b) {
-  return a + b;
-}
-
-/***/ }),
-
-/***/ "./src/js/sum.js":
-/*!***********************!*\
-  !*** ./src/js/sum.js ***!
-  \***********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ sum; }
-/* harmony export */ });
-function sum() {
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return args.reduce(function (a, b) {
-    return a + b;
-  }, 0);
-}
+console.log((0,_js_count__WEBPACK_IMPORTED_MODULE_0__["default"])(2, 9)); // console.log(sum(2, 7));
 
 /***/ })
 
@@ -138,7 +54,44 @@ function sum() {
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	!function() {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = function(result, chunkIds, fn, priority) {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var chunkIds = deferred[i][0];
+/******/ 				var fn = deferred[i][1];
+/******/ 				var priority = deferred[i][2];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every(function(key) { return __webpack_require__.O[key](chunkIds[j]); })) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -167,33 +120,69 @@ function sum() {
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	!function() {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = function(chunkId) { return installedChunks[chunkId] === 0; };
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
+/******/ 			var chunkIds = data[0];
+/******/ 			var moreModules = data[1];
+/******/ 			var runtime = data[2];
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some(function(id) { return installedChunks[id] !== 0; })) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkwebpackStudy"] = self["webpackChunkwebpackStudy"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	}();
+/******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_count__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/count */ "./src/js/count.js");
-/* harmony import */ var _js_sum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/sum */ "./src/js/sum.js");
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
-/* harmony import */ var _css_index_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/index.less */ "./src/css/index.less");
-/* harmony import */ var _css_index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./css/index.scss */ "./src/css/index.scss");
-/* harmony import */ var _css_index_sass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/index.sass */ "./src/css/index.sass");
-/* harmony import */ var _css_index_styl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/index.styl */ "./src/css/index.styl");
-/* harmony import */ var _css_iconfont_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./css/iconfont.css */ "./src/css/iconfont.css");
-
-
-
-
-
-
-
-
-console.log((0,_js_count__WEBPACK_IMPORTED_MODULE_0__["default"])(2, 9));
-console.log((0,_js_sum__WEBPACK_IMPORTED_MODULE_1__["default"])(2, 7));
-}();
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["default-src_css_iconfont_css-src_css_index_css-src_css_index_less-src_css_index_sass-src_css_-0cc1e6"], function() { return __webpack_require__("./src/app.js"); })
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=app.js.map
