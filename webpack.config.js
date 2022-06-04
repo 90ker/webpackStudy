@@ -25,10 +25,13 @@ const basicStyleLoader = [
 const threads = os.cpus().length;
 
 module.exports = {
-  entry: './src/main',
+  entry: {
+    app: './src/app',
+    main: './src/main',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/main.js',
+    filename: 'js/[name].js',
     clean: true
   },
   module: {
@@ -84,7 +87,8 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                   cacheDirectory: true,
-                  cacheCompression: false
+                  cacheCompression: false,
+                  plugins: ['@babel/plugin-transform-runtime']
                 }
               }
             ]
