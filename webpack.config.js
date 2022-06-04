@@ -31,46 +31,50 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: basicStyleLoader
-      },
-      {
-        test: /\.less$/,
-        use: [...basicStyleLoader, 'less-loader']
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: [...basicStyleLoader, 'sass-loader']
-      },
-      {
-        test: /\.styl$/,
-        use: [...basicStyleLoader, 'stylus-loader']
-      },
-      {
-        test: /\.(jpe?g|png|gif|webp|svg)$/,
-        type: 'asset',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 20 * 1024
+        oneOf: [
+          {
+            test: /\.css$/,
+            use: basicStyleLoader
+          },
+          {
+            test: /\.less$/,
+            use: [...basicStyleLoader, 'less-loader']
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: [...basicStyleLoader, 'sass-loader']
+          },
+          {
+            test: /\.styl$/,
+            use: [...basicStyleLoader, 'stylus-loader']
+          },
+          {
+            test: /\.(jpe?g|png|gif|webp|svg)$/,
+            type: 'asset',
+            parser: {
+              dataUrlCondition: {
+                maxSize: 20 * 1024
+              }
+            },
+            generator: {
+              filename: 'images/[hash:5][ext][query]'
+            }
+          },
+          {
+            test: /\.(ttf|woff2?|mp3|mp4|avi)$/,
+            type: 'asset/resource',
+            generator: {
+              filename: 'icons/[hash:5][ext][query]'
+            }
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader'
+            }
           }
-        },
-        generator: {
-          filename: 'images/[hash:5][ext][query]'
-        }
-      },
-      {
-        test: /\.(ttf|woff2?|mp3|mp4|avi)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'icons/[hash:5][ext][query]'
-        }
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        ]
       }
     ]
   },
