@@ -52,7 +52,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(ttf|woff2?)$/,
+        test: /\.(ttf|woff2?|mp3|mp4|avi)$/,
         type: 'asset/resource',
         generator: {
           filename: 'icons/[hash:5][ext][query]'
