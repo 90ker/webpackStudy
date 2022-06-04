@@ -246,7 +246,7 @@ eval("module.exports = \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAADrC
   \**************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"0cae1be9f517be29d36a.jpg\";\n\n//# sourceURL=webpack://webpackStudy/./src/assets/b.jpg?");
+eval("module.exports = __webpack_require__.p + \"images/0cae1.jpg\";\n\n//# sourceURL=webpack://webpackStudy/./src/assets/b.jpg?");
 
 /***/ }),
 
@@ -256,7 +256,7 @@ eval("module.exports = __webpack_require__.p + \"0cae1be9f517be29d36a.jpg\";\n\n
   \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"83b0185cce783a6d40d7.gif\";\n\n//# sourceURL=webpack://webpackStudy/./src/assets/monkey.gif?");
+eval("module.exports = __webpack_require__.p + \"images/83b01.gif\";\n\n//# sourceURL=webpack://webpackStudy/./src/assets/monkey.gif?");
 
 /***/ })
 
@@ -359,7 +359,7 @@ eval("module.exports = __webpack_require__.p + \"83b0185cce783a6d40d7.gif\";\n\n
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 		__webpack_require__.p = scriptUrl + "../";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

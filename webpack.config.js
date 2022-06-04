@@ -3,7 +3,7 @@ module.exports = {
   entry: './src/main',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'js/main.js'
   },
   module: {
     rules: [
@@ -45,6 +45,9 @@ module.exports = {
           dataUrlCondition: {
             maxSize: 20 * 1024
           }
+        },
+        generator: {
+          filename: 'images/[hash:5][ext][query]'
         }
       }
     ]
