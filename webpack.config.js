@@ -37,6 +37,15 @@ module.exports = {
           'css-loader',
           'stylus-loader'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|webp|svg)$/,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 20 * 1024
+          }
+        }
       }
     ]
   },
