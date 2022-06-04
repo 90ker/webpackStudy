@@ -71,7 +71,11 @@ module.exports = {
             test: /\.m?js$/,
             exclude: /node_modules/,
             use: {
-              loader: 'babel-loader'
+              loader: 'babel-loader',
+              options: {
+                cacheDirectory: true,
+                cacheCompression: false
+              }
             }
           }
         ]
@@ -80,7 +84,9 @@ module.exports = {
   },
   plugins: [
     new ESLintPlugin({
-      context: path.resolve(__dirname, 'src')
+      context: path.resolve(__dirname, 'src'),
+      cache: true,
+      cacheLocation: path.resolve(__dirname, './node_modules/.cache/eslint-cache')
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html')
