@@ -3,6 +3,23 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const basicStyleLoader = [
+  MiniCssExtractPlugin.loader,
+  'css-loader',
+  {
+    loader: 'postcss-loader',
+    options: {
+      postcssOptions: {
+        plugins: [
+          [
+            'postcss-preset-env',
+          ],
+        ],
+      },
+    },
+  }
+]
+
 module.exports = {
   entry: './src/main',
   output: {
@@ -14,34 +31,19 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        use: basicStyleLoader
       },
       {
         test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'less-loader'
-        ]
+        use: [...basicStyleLoader, 'less-loader']
       },
       {
         test: /\.s[ac]ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [...basicStyleLoader, 'sass-loader']
       },
       {
         test: /\.styl$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'stylus-loader'
-        ]
+        use: [...basicStyleLoader, 'stylus-loader']
       },
       {
         test: /\.(jpe?g|png|gif|webp|svg)$/,
@@ -87,5 +89,5 @@ module.exports = {
     port: '3000',
     open: true
   },
-  mode: 'development' 
+  mode: 'development'
 }
