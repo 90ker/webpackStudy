@@ -1,8 +1,10 @@
+const os = require('os');
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 const basicStyleLoader = [
   MiniCssExtractPlugin.loader,
@@ -20,6 +22,7 @@ const basicStyleLoader = [
     },
   }
 ]
+const threads = os.cpus().length;
 
 module.exports = {
   entry: './src/main',
@@ -70,13 +73,21 @@ module.exports = {
           {
             test: /\.m?js$/,
             exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                cacheDirectory: true,
-                cacheCompression: false
+            use: [
+              {
+                loader: 'thread-loader',
+                options: {
+                  works: threads
+                }
+              },
+              {
+                loader: 'babel-loader',
+                options: {
+                  cacheDirectory: true,
+                  cacheCompression: false
+                }
               }
-            }
+            ]
           }
         ]
       }
@@ -86,7 +97,8 @@ module.exports = {
     new ESLintPlugin({
       context: path.resolve(__dirname, 'src'),
       cache: true,
-      cacheLocation: path.resolve(__dirname, './node_modules/.cache/eslint-cache')
+      cacheLocation: path.resolve(__dirname, './node_modules/.cache/eslint-cache'),
+      threads
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html')
@@ -94,8 +106,15 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/main.css'
     }),
-    new CssMinimizerPlugin()
   ],
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserWebpackPlugin({
+        parallel: threads
+      })
+    ]
+  },
   devServer: {
     host: 'localhost',
     port: '3000',
